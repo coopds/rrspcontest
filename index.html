@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Win a chance to double your RRSPs</title>
+  <!-- Bootstrap -->
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      <style>
+      .container{
+        max-width:992px;
+      }
+
+      .btn-primary{
+        background-color: #008ACC;
+      }
+
+      #day{
+        font-size: 5em;
+      }
+
+      #hour, #min{
+        font-size: 3.2em;
+      }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="http://www.cooperators.ca/~/media/Corporate Site/Cooperators-logo-blue-2X.png" class="img-responsive" alt="The Co-operators" width="280" height="90">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-md-push-8">
+            <div id="countdown" class="row"></div>
+          </div>
+          <div class="col-md-8 col-md-pull-4">
+            <h1>Win a chance to double your RRSPs</h1>
+            <p class="lead">We've taken the magic out of investing.  You could double your RRSP/TFSA contribution up to $5,000!</p>
+            <p>What season is most magical to you? For <strong>4 lucky winners</strong>, we guarantee they'll say "RRSP Season"!</p>
+            <p>When you make a contribution of $500 or more to a new or existing RRSP or TFSA with The&nbsp;Co-operators, you"ll be automatically entered in a draw for a chance to have us match your contribution, up to $5,000!</p>
+            <p>Your contribution must be made between 9:00am on January 5 and 5:00pm on March 2, 2015, by either Pre-Authorized Debit (PAD) or a lump sum.</p>
+            <ul class="list-inline">
+              <li><a class="btn btn-primary" href="http://www.cooperators.ca/en/Investments/segregated-funds/versatile-portfolio.aspx" target="_blank">RRSP and TFSA Information</a></li>
+              <li><a class="btn btn-primary" href="http://www.cooperators.ca/en/PublicPages/AgentLocator.aspx" target="_blank">Find an Advisor</a></li>
+              <li><a class="btn btn-primary" href="http://www.cooperators.ca/en/PublicPages/Legal-v.aspx" target="_blank">Rules and Regulations</a></li>
+            </ul>
+            <p><small>*Some conditions apply. Contest closes March 2, 2015.</small></p>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-12" style="z-index:-1;">
+            <img style="float:right; margin-top:-190px;" src="img/embig.jpg" alt=""/>
+          </div>
+        </div>
+
+      </div>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+      <script>
+
+    CountDownTimer('03/02/2015 05:00 PM', 'countdown');
+
+    function CountDownTimer(dt, id)
+    {
+        var end = new Date(dt);
+
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var timer;
+
+        function showRemaining() {
+            var now = new Date();
+            var distance = end - now;
+            if (distance < 0) {
+
+                clearInterval(timer);
+                document.getElementById(id).innerHTML = 'EXPIRED!';
+
+                return;
+            }
+            var days = Math.floor(distance / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);
+            document.getElementById(id).innerHTML = '<div id="day" class="col-md-12 text-center">' + days + '<span class="unit"> days </span></div><div id="hour" class="col-md-12 text-center">' + hours + '<span class="unit">h </span>' + minutes + '<span class="unit">m </span>'+ seconds +'<span class="unit">s</span></div>';
+            //document.getElementById(id).innerHTML +=  ;
+            //document.getElementById(id).innerHTML += seconds + 'secs';
+        }
+
+        timer = setInterval(showRemaining, 1000);
+    }
+
+</script>
+</body>
+</html>
